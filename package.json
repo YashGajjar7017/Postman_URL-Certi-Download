@@ -4,9 +4,11 @@
   "description": "Electron + MERN/Vite Certificate Downloader and Wireless Provisioning Tool",
   "main": "electron/main.js",
   "scripts": {
+    "server": "node server/index.js",
     "dev:vite": "vite",
     "dev:electron": "wait-on tcp:5173 && electron .",
-    "dev": "concurrently -k \"npm run dev:vite\" \"npm run dev:electron\"",
+    "dev": "concurrently -k \"vite\" \"npm run dev:electron\"",
+    "start:web": "concurrently -k \"node server/index.js\" \"vite\"",
     "build": "vite build",
     "preview": "vite preview",
     "start": "electron ."
